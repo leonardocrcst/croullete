@@ -15,7 +15,7 @@ class CreateForeignCombination extends Migration
     {
         $entity = 'combinations';
         if (Schema::hasTable($entity)) {
-            Schema::create($entity, function (Blueprint $table) {
+            Schema::table($entity, function (Blueprint $table) {
                 $table->foreign('user', 'combination-user_x_users-id')->on('users')->references('id');
             });
         }
